@@ -1,0 +1,28 @@
+<%- include('includes/header') %>
+
+<div class="staff-login-container">
+    <div class="staff-login-inner student">
+        <div class="sidebar2-2">
+            <div class="head-design"><h2><%= teacher.firstName %> <%= teacher.lastName %></h2></div>
+                <div class="student-view">
+                    <div>
+                        <ul class="staff-ul">
+                            <li>First Name: <p><%= teacher.firstName %></p></li>
+                            <li>Last Name: <p> <%= teacher.lastName %></p></li>
+                            <li> Date of Birth: <p><%= teacher.DoB %></p></li>
+                            <li>Class: <p><%= teacher.class %></p></li>
+                            <li>Email: <p><%= teacher.email %></p></li>
+                            <li>Phone No.: <p><%= teacher.phone %></p></li>
+                            <li>Gender: <p><%= teacher.gender %></p></li>
+                            <li>Account Created on: <p><%= teacher.createdDate.getDay() + 1 %> / <%= teacher.createdDate.getDate() %> / <%= teacher.createdDate.getFullYear() %></p></li>
+                        </ul>
+                    </div>
+
+                    
+                </div>
+                <a href="#"  title="Edit Student's Profile"><i class="fas fa-user-edit"></i></a>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

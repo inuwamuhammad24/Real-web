@@ -1,0 +1,37 @@
+<%- include('includes/header') %>
+
+<%- include('includes/errors') %>
+
+    <div class="contact-container">
+        <div class="contact-sidebar1">
+            <h1>Our Contact Address</h1>
+
+            <p>Mail Address</p>
+            <p><i class="fas fa-map-marker-alt"></i>P.O.Box 99987, Filin Sukuwa Jos Plateau State, Nigeria</p>
+            <p>Phone Numbers</p>
+            <p><i class="fas fa-phone"></i>+234 8037011977</p>
+            <p>Email</p>
+            <p><i class="fas fa-envelope-open-text"></i>bright@bright.com</p>
+
+            <h2>You can also follow us on social Media</h2>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+        <div class="contact-sidebar2">
+                <h1>SEND US AN EMAIL</h1>
+                <form action="/email" method="POST">
+                    <input type="text" name="name" placeholder="Enter your name...">
+                    <input type="email" name="email" placeholder="Enter your email...">
+                    <input type="tel" name="phone" placeholder="Enter your phone number...">
+                    <textarea rows="7" name="message" placeholder="Type your message here..."></textarea>
+                    <button class="submit">SUBMIT EMAIL</button>
+                </form>
+        </div>
+    </div>
+
+    <%- include('includes/footer') %>

@@ -1,0 +1,79 @@
+<%- include('includes/header') %>
+
+<%- include('includes/errors') %>
+
+<div class="staff-login-container">
+
+    <div class="sidebar1">
+        <p>&times;</p>
+        <h2>Quick Links</h2>
+        <ul>
+            <a href="/"><li><i class="fas fa-user-tie"></i>All Staff (9)</li></a>
+            <a href="/students"><li><i class="fas fa-user-graduate"></i>All Students (120)</li></a>
+            <a href="all_emails"><li><i class="fas fa-at"></i>Emails (2)</li></a>
+        </ul>
+    </div>
+
+
+    <div class="sidebar2">
+        <div class="sidebar2-head">
+            <a href="/logout" title="click to logout">
+                <p class="email"><%= admin.email %></p>
+            </a>
+        </div>
+
+        <div class="sidebar2-content">
+            <button>MENU</button>
+            <div class="welcome">
+                <h1>Hello, Muhammad</h1>
+                <p>Its good to have you here!</p>
+            </div>
+
+            <div class="small-message">My Profile</div>
+            <div class="main-content">
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-user-plus"></i>
+                            <div>
+                                <h2>Add a Staff</h2>
+                                <p>Click to add a Staff</p>
+                            </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-user-plus"></i>
+                            <div>
+                                <h2>Add a Student</h2>
+                                <p>click to add a Student</p>
+                            </div> 
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-search-plus"></i>
+                            <div>
+                                <h2>Search by Student's Name</h2>
+                                <p>Search a student by his name</p>
+                            </div> 
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-search-plus"></i>
+                            <div>
+                                <h2>Search teacher by Name</h2>
+                                <p>Search a teacher by name</p>
+                            </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
+<%- include('includes/footer') %>

@@ -1,0 +1,21 @@
+<%- include('includes/header') %>
+
+<div class="view-container">
+    <div class="view-wrapper">
+        <div class="view-sidebar1">
+            <h2>Student's Profile</h2>
+            <ul>
+                <div><li>FIRST NAME:</li><p><%= std.firstName %></p></div>
+                <div><li>LAST NAME:</li><p><%= std.lastName %></p></div>
+                <div><li>DATE OF BIRTH:</li><p><%= std.DoB %></p></div>
+                <div><li>CLASS:</li><p><%= std.class %></p></div>
+            </ul>
+        </div>
+        <div class="view-sidebar2">
+            <h2>Student's record</h2>
+            <p><%= std.record %></p>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

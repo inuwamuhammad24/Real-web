@@ -1,0 +1,89 @@
+<%- include('includes/header') %>
+ <!-- sign up form starts here -->
+<div class="app-container">
+    <div class="app-container-inner">
+        <form action="/signup" method="POST">
+            
+            <div class="page1">
+                <h1>CREATE A TEACHER'S ACCOUNT</h1>
+                <div class="form-content">
+                    <div class="form-content-inner">
+                        <div>
+                            <label for="first-name">First Name:</label>
+                            <input type="text" id="first-name" name="firstName">
+                        </div>
+
+                        <div>
+                            <label for="last-name">Last Name:</label>
+                            <input type="text" id="last-name" name="lastName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                    <label for="email">Email*</label>
+                    <input id="email" type="email" placeholder="you@example.com" name="email">
+                </div>
+
+                <div class="form-content">
+                    <label for="Date-of-Birth">Date of Birth*</label>
+                    <input id="Date-of-Birth" type="date" placeholder="Date of birth" name="DoB">
+                </div>
+
+                <div class="form-content">
+                    <label for="Date-of-birth" name="class">Class*</label>
+                        <select value="class" name="class">
+                            <option>select a class</option>
+                            <option name="nursery-one">Nursery one</option>
+                            <option name="nursery-two">Nursery two</option>
+                            <option name="nursery-three">Nursery Three</option>
+                            <option name="primary-one">Primary one</option>
+                            <option name="primary-two">Primary two</option>
+                            <option name="primary-three">Primary three</option>
+                            <option name="primary-four">Primary four</option>
+                            <option name="primary-five">Primary five</option>
+                        </select>
+                </div>
+
+                <div class="form-btn">
+                    <button class="next1">NEXT</button>
+                </div>
+            </div>
+
+            <div class="page2">
+                <h1>CREATE A TEACHER'S ACCOUNT</h1>
+                <div class="form-content">
+                    <label for="gender">Gender</label>
+                    <select value="gender" name="gender">
+                        <option>select your gender</option>
+                        <option name="female">Female</option>
+                        <option name="male">Male</option>
+                    </select>
+                </div>
+
+                <div class="form-content">
+                    <label for="phone">Phone Number*</label>
+                    <input id="phone" type="tel" placeholder="07983749497" name="phone">
+                </div>
+
+                <div class="form-content">
+                    <label for="password">Choose a password*</label>
+                    <input id="password" type="password" placeholder="password" name="password">
+                </div>
+
+                <div class="form-content">
+                    <label for="confirm-password">Confirm password*</label>
+                    <input id="confirm-password" type="password" placeholder="confirm-password" name="confirmPassword">
+                </div>
+
+                <div class="form-btn">
+                    <button class="previous1">PREVIOUS</button>
+                    <button class="submit1">SUBMIT</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- sign up form ends here -->
+
+<%- include('includes/footer') %>

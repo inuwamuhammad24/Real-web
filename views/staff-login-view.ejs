@@ -1,0 +1,61 @@
+
+<%- include('includes/header') %>
+ <!-- staff Login page starts -->
+
+ <div class="staff-login-container">
+
+    <div class="sidebar1">
+        <p>&times;</p>
+        <h2>Quick Links</h2>
+        <ul>
+            <a href="/viewAll"><li><i class="fas fa-street-view"></i>All Pupils</li></a>
+            <a href="#" class="add-student"><li><i class="fas fa-plus"></i>Add Pupil</li></a>
+            <a href="/login"><li><i class="fas fa-user-circle"></i>My Profile</li></a>
+        </ul>
+    </div>
+
+
+    <div class="sidebar2">
+        <div class="sidebar2-head">
+            <a href="/logout" title="click to logout">
+                <p class="sidebar2-name">LOGOUT</p>
+                <p class="email"><%= teachersInfo.email %></p>
+            </a>
+        </div>
+
+        <div class="sidebar2-content">
+            <div class="welcome">
+                <h1>HELLO, <%= teachersInfo.firstName %></h1>
+                <p>Below is the list of all students in your class</p>
+            </div>
+
+            <%- include('includes/errors') %>
+            <div class="small-message">Found: <%= students.length %> Students</div>
+            <div class="main-content">
+                    <% students.forEach(function(student) { %>
+                        <a href="/view/<%= student._id %>">
+                            <div class="content-box">
+                                <i class="fas fa-user"></i>
+                                    <div>
+                                        <h2><%= student.firstName %> <%=student.lastName %></h2>
+                                        <p>Click here to display student's record</p>
+                                    </div>
+        
+                                    <div class="profile-icons">
+                                        <a class="edit-student" href="/edit/<%= student._id %>"><i class="fas fa-user-edit"></i></a>
+                                        <a class="delete-student" href="#"><i class="far fa-trash-alt"></i></a>
+                                    </div>
+
+                                    
+
+                                    
+                            </div>
+                        </a>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
+<%- include('includes/footer') %>

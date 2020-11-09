@@ -1,0 +1,102 @@
+<%- include('includes/header') %>
+ <!-- staff Login page starts -->
+
+ <div class="staff-login-container">
+
+    <div class="sidebar1">
+        <p>&times;</p>
+        <h2>Quick Links</h2>
+        <ul>
+            <a href="/viewAll"><li><i class="fas fa-street-view"></i>All Pupils</li></a>
+            <a href="#" class="add-student"><li><i class="fas fa-plus"></i>Add Pupil</li></a>
+            <a href="/login"><li><i class="fas fa-user-circle"></i>My Profile</li></a>
+        </ul>
+    </div>
+
+
+    <div class="sidebar2">
+        <div class="sidebar2-head">
+            <a href="/logout" title="click to logout">
+                <p class="sidebar2-name"><%= teachersInfo.firstName %> <%= teachersInfo.lastName %></p>
+                <p class="email"><%= teachersInfo.email %></p>
+            </a>
+        </div>
+
+        <div class="sidebar2-content">
+            <button>MENU</button>
+            <div class="welcome">
+                <h1>HELLO, <%= teachersInfo.firstName %></h1>
+                <p>Its good to have you here!</p>
+            </div>
+
+            <%- include('includes/errors') %>
+            <div class="small-message">My Profile</div>
+            <div class="main-content">
+                <a href="#">
+                    <div class="content-box">
+                        <i class="fas fa-user"></i>
+                            <div>
+                                <h2>Full Name</h2>
+                                <p><%= teachersInfo.firstName %> <%= teachersInfo.lastName %></p>
+                            </div>
+
+                            <div class="profile-icons">
+                                <a href="/edit-name"><i class="fas fa-user-edit"></i></a>
+                                <!-- <a href="/"><i class="far fa-trash-alt"></i></a> -->
+                            </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div>
+                                <h2>Phone Number</h2>
+                                <p><%= teachersInfo.phone %></p>
+                            </div> 
+
+                            <div class="profile-icons">
+                                <a href="/edit-name"><i class="fas fa-user-edit"></i></a>
+                                <!-- <a href="/"><i class="far fa-trash-alt"></i></a> -->
+                            </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-calendar-week"></i>
+                            <div>
+                                <h2>Date of Birth</h2>
+                                <p><%= teachersInfo.DoB %></p>
+                            </div> 
+
+                            <div class="profile-icons">
+                                <a href="/edit-name"><i class="fas fa-user-edit"></i></a>
+                                <!-- <a href="/"><i class="far fa-trash-alt"></i></a> -->
+                            </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="content-box">
+                            <i class="fas fa-glass-whiskey"></i>
+                            <div>
+                                <h2>Class</h2>
+                                <p><%= teachersInfo.cls %></p>
+                            </div>
+                            
+                            <div class="profile-icons">
+                                <a href="/edit-name"><i class="fas fa-user-edit"></i></a>
+                                <!-- <a href="/"><i class="far fa-trash-alt"></i></a> -->
+                            </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
+<!-- staff Login page ends -->
+
+<%- include('includes/footer') %>

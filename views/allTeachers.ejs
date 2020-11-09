@@ -1,0 +1,53 @@
+
+<%- include('includes/header') %>
+
+<div class="staff-login-container">
+    <div class="sidebar1">
+        <p>&times;</p>
+        <h2>Quick Links</h2>
+        <ul>
+            <a href="/teachers"><li><i class="fas fa-user-tie"></i>All Staff</li></a>
+            <a href="/students"><li><i class="fas fa-user-graduate"></i>All Students</li></a>
+            <a href="#"><li><i class="fas fa-at"></i>Emails</li></a>
+        </ul>
+    </div>
+
+
+    <div class="sidebar2">
+        <div class="sidebar2-head">
+            <a href="#" title="click to logout">
+                <p class="email"><%= admin.email %></p>
+            </a>
+        </div>
+
+        <div class="sidebar2-content">
+            <button>MENU</button>
+            <div class="welcome">
+                <h1>Hello, Muhammad</h1>
+                <p>It's good to have you here!</p>
+            </div>
+
+            <div class="small-message">Found: <%= teachers.length %> Staff</div>
+            <div class="main-content">
+                    <% teachers.forEach(function(teacher) { %>
+                        <a href="/teacher/<%= teacher._id %>">
+                            <div class="content-box">
+                                <i class="fas fa-user"></i>
+                                    <div>
+                                        <h2><%= teacher.firstName %> <%=teacher.lastName %></h2>
+                                        <p><%= teacher.class %></p>
+                                    </div>
+        
+                                    <div class="profile-icons">
+                                        <a href="/delete/<%= teacher._id %>"><i class="far fa-trash-alt"></i></a>
+                                    </div>
+                            </div>
+                        </a>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+        
+</div>
+
+<%- include('includes/footer') %>
