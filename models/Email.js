@@ -30,6 +30,13 @@ Email.prototype.cleanup = function() {
     }
 }
 
+Email.emailCount = function() {
+    return new Promise(async (resolve, reject) => {
+        let emailCount = await emailCollection.countDocuments()
+        resolve(emailCount)
+    })
+}
+
 Email.prototype.send = function() {
     return new Promise((resolve, reject) => {
         this.cleanup()
@@ -74,6 +81,18 @@ Email.delete = function(emailId) {
         }).catch(() => {
             reject('Please try again later')
         })
+    })
+}
+
+Email.view = function(id) {
+    return new Promise(async (resolve, reject) => {
+        if (typeof(id) != 'string' || !ObjectID.isValid(id)) {
+            reject()
+            return
+        }
+
+        let email = await emailCollection.findOne({_id: ObjectID(id)})
+        resolve(email)
     })
 }
 module.exports = Email

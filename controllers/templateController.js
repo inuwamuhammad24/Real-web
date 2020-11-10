@@ -1,4 +1,6 @@
+const Email = require('../models/Email')
 const Student = require('../models/Student')
+const { teacherCount } = require('../models/User')
 const User = require('../models/User')
 // const sgMail = require('@sendgrid/mail')
 // sgMail.setApiKey(process.env.SENDGRIDAPIKEY)
@@ -102,12 +104,21 @@ exports.signup = function(req, res) {
 
 exports.admin = function (req, res) {
     let admin = new User(req.body)
-    admin.adminLogin().then((admin) => {
+    admin.adminLogin().then(async (admin) => {
+        let teachersCount = User.teacherCount()
+        let emailCount = Email.emailCount()
+        let studentCount = Student.studentCount()
+
+        let [tCount, eCount, sCount] = await Promise.all([teachersCount, emailCount, studentCount])
+        console.log(tCount, eCount, sCount)
         req.session.admin = admin
         res.render('admin-login', {
             errors: req.flash('errors'), 
             success: req.flash('success'), 
             admin: req.session.admin,
+            tCount: tCount,
+            eCount: eCount,
+            sCount: sCount
         })
     }).catch((err) => {
         req.flash('errors', err)
@@ -117,9 +128,21 @@ exports.admin = function (req, res) {
     })
 }
 
-exports.adminGet = function(req, res) {
+exports.adminGet = async function(req, res) {
     if (req.session.admin) {
-        res.render('admin-login', {errors: req.flash('errors'), success: req.flash('success'), admin: req.session.admin})
+        let teachersCount = User.teacherCount()
+        let emailCount = Email.emailCount()
+        let studentCount = Student.studentCount()
+
+        let [tCount, eCount, sCount] = await Promise.all([teachersCount, emailCount, studentCount])
+        res.render('admin-login', {
+            errors: req.flash('errors'), 
+            success: req.flash('success'), 
+            admin: req.session.admin,
+            tCount: tCount,
+            eCount: eCount,
+            sCount: sCount
+        })
     } else {
         req.flash('errors', 'You must Login as an Administrator to view that page')
         req.session.save(function() {

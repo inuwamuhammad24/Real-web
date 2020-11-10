@@ -10,7 +10,7 @@ exports.create = function(req, res) {
         })
     }).catch((err) => {
         req.flash('errors', err)
-        req.session.save(() => res.redirect('/login'))
+        req.session.save(() => res.redirect('/viewAll'))
     })
 }
 
@@ -55,7 +55,7 @@ exports.allStudent = function(req, res) {
 
 
 exports.delete = function(req, res) {
-    if (req.session.admin || req.session.user) {
+    if (req.session.user) {
         Student.delete(req.params.id).then(() => {
             req.flash('success', 'Student removed successfully ')
             req.session.save(() => res.redirect('/viewAll'))

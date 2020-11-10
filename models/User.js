@@ -68,6 +68,13 @@ User.prototype.validateTeachersForm = function() {
     if (this.data.confirmPassword == '') this.errors.push('Please confirm password')
 }
 
+User.teacherCount = function() {
+    return new Promise(async (resolve, reject) => {
+        let teacherCount = await teachersDataCollection.countDocuments()
+        resolve(teacherCount)
+    })
+}
+
 
 User.prototype.login = function() {
     return new Promise((resolve, reject) => {

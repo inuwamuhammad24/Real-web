@@ -31,6 +31,13 @@ Student.prototype.cleanUp = function() {
     }
 }
 
+Student.studentCount = function() {
+    return new Promise(async (resolve, reject) => {
+        let studentcount = await studentCollection.countDocuments()
+        resolve(studentcount)
+    })
+}
+
 Student.prototype.create = function() {
     return new Promise((resolve, reject) => {
         this.cleanUp()

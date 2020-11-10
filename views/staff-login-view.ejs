@@ -24,6 +24,7 @@
         </div>
 
         <div class="sidebar2-content">
+           <button>MENU</button>
             <div class="welcome">
                 <h1>HELLO, <%= teachersInfo.firstName %></h1>
                 <p>Below is the list of all students in your class</p>
@@ -43,7 +44,7 @@
         
                                     <div class="profile-icons">
                                         <a class="edit-student" href="/edit/<%= student._id %>"><i class="fas fa-user-edit"></i></a>
-                                        <a class="delete-student" href="#"><i class="far fa-trash-alt"></i></a>
+                                        <a class="delete-student" href="/delete/<%= student._id %>"><i class="far fa-trash-alt"></i></a>
                                     </div>
 
                                     

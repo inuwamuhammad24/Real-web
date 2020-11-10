@@ -61,3 +61,17 @@ exports.delete = function(req, res) {
         req.session.save(() => res.redirect('/'))
     }
 }
+
+exports.view = function(req, res) {
+    if (req.session.admin) {
+        Email.view(req.params.id).then((email) => {
+            res.render('email_view', {email: email})
+        }).catch((err) => {
+            req.flash('errors', err)
+            req.session.save(() => res.redirect('/all_emails'))
+        })
+    } else {
+        req.flash('errors', 'You do not have permission to view that page')
+        req.session.save(() => res.redirect('/'))
+    }
+}

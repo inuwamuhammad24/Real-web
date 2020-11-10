@@ -1,0 +1,21 @@
+<%- include('includes/header') %>
+
+<div class="view-container">
+    <div class="view-wrapper">
+        <div class="view-sidebar1">
+            <h2>Sender's Profile</h2>
+            <ul>
+                <div><li>FIRST NAME:</li><p><%= email.name %></p></div>
+                <div><li>PHONE:</li><p><%= email.phone %></p></div>
+                <div><li>EMAIL:</li><p><%= email.email %></p></div>
+                <div><li>SEND ON:</li><p><%= email.date.getDate() %> / <%= email.date.getMonth() + 1 %> / <%= email.date.getFullYear() %></p></div>
+            </ul>
+        </div>
+        <div class="view-sidebar2">
+            <h2>Message</h2>
+            <p><%= email.message %></p>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

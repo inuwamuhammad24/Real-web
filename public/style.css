@@ -20,9 +20,10 @@ body {
 
 .head-design h2 {
     text-align: center;
-    font-size: 1em;
+    font-size: .9em;
     color: #fff;
     border-radius: 5px 5px 0 0;
+    font-weight: 500;
 }
 
 .director {
@@ -523,8 +524,10 @@ close {
 
 .heading {
     text-align: center;
-    font-family: arial;
-    margin-bottom: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+    color: red;
 }
 
 .news-flex {
@@ -1086,7 +1089,7 @@ close {
     background-color: rgb(192, 255, 109);
     padding: 20px;
     font-size: 13px;
-    color: #000;
+    color: rgb(0, 58, 0);
     width: 99%;
     border-radius: 5px;
     margin: 3px auto;
@@ -1436,6 +1439,8 @@ close {
     top: 50%;
     right: 0;
     transform: translateY(-50%);
+    padding: 5px 5px;
+    background: #fff;
 }
 
 .profile-icons .fa-user-edit {
@@ -2008,6 +2013,7 @@ close {
     .staff-login-container {
         display: block;
         position: relative;
+        overflow: hidden;
     }
 
     .sidebar1 {
@@ -2058,6 +2064,7 @@ close {
 
     .welcome p {
         font-size: 14px;
+        width: 80%;
     }
 
     .sidebar2-content {
@@ -2098,5 +2105,21 @@ close {
 
     .sidebar2-name {
         display: none;
+    }
+
+    .flash-success, .flash {
+        padding: 10px 45px 10px 10px;
+    }
+
+    .slide {
+        height: 35vh;
+    }
+
+    .sidebar1 ul li {
+        padding: 10px 15px;
+    }
+
+    .flash-success p, .flash p {
+        right: 10px;
     }
 }

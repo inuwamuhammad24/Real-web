@@ -21,6 +21,7 @@ router.get('/all_emails', emailController.allEmails)
 router.get('/email/delete/:id', emailController.delete)
 router.get('/logout', templateController.logout)
 router.get('/delete/:id', studentController.delete)
+router.get('/email/:id', emailController.view)
 router.post('/edit/:id', studentController.edit)
 
 
