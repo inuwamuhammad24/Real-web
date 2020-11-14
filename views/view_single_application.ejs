@@ -1,0 +1,119 @@
+<%- include('includes/header') %>
+
+<div class="application-container">
+    <div class="application-container-inner">
+        <div class="app-header">
+            <div><%= appDetail.date.toDateString() %></div>
+        </div>
+
+        <div class="admission-head">
+            <h3>APPLICANT'S DETAILS</h3>
+        </div>
+
+        <div class="admission-content-container">
+            <ul>
+                <div>
+                    <li>First Name</li>
+                    <p><%= appDetail.firstName %></p>
+                </div>
+
+                <div>
+                    <li>Middle Name</li>
+                    <p><%= appDetail.middleName %></p>
+                </div>
+
+                <div>
+                    <li>Last Name</li>
+                    <p><%= appDetail.lastName %></p>
+                </div>
+
+                <div>
+                    <li>State</li>
+                    <p><%= appDetail.state %></p>
+                </div>
+
+                <div>
+                    <li>Local Government</li>
+                    <p><%= appDetail.LGA %></p>
+                </div>
+
+                <div>
+                    <li>Date of Birth</li>
+                    <p><%= appDetail.DoB %></p>
+                </div>
+
+                <div>
+                    <li>Place of Birth</li>
+                    <p><%= appDetail.placeDoB %></p>
+                </div>
+
+                <div>
+                    <li>Nationality</li>
+                    <p><%= appDetail.nationality %></p>
+                </div>
+
+                <div>
+                    <li>Gender</li>
+                    <p><%= appDetail.sex %></p>
+                </div>
+
+                <div>
+                    <li>Religion</li>
+                    <p><%= appDetail.religion %></p>
+                </div>
+
+                <div>
+                    <li>Tribe</li>
+                    <p><%= appDetail.tribe %></p>
+                </div>
+
+                <div>
+                    <li>Class Applied</li>
+                    <p><%= appDetail.classForAdmin %></p>
+                </div>
+
+                <div>
+                    <li>Last School Attended</li>
+                    <p><%= appDetail.lastSchool %></p>
+                </div>
+
+                <div>
+                    <li>Father's First Name</li>
+                    <p><%= appDetail.ffirstName %></p>
+                </div>
+
+                <div>
+                    <li>Father's middle Name</li>
+                    <p><%= appDetail.fmiddleName %></p>
+                </div>
+
+                <div>
+                    <li>Father's Last Name</li>
+                    <p><%= appDetail.flastName %></p>
+                </div>
+
+                <div>
+                    <li>Father's Address</li>
+                    <p><%= appDetail.contactAddress %></p>
+                </div>
+
+                <div>
+                    <li>Father's Occupation</li>
+                    <p><%= appDetail.occupation %></p>
+                </div>
+
+                <div>
+                    <li>Father's Phone Number</li>
+                    <p><%= appDetail.phone %></p>
+                </div>
+
+                <div>
+                    <li>Father's Email Address</li>
+                    <p><%= appDetail.email %></p>
+                </div>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/footer') %>

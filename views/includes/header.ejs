@@ -19,11 +19,17 @@
             <h2>ADMIN LOGIN</h2>
             <div class="alert">Hello</div> <!--  Alerting message -->
             <form action="/admin" method="POST">
-                <input type="text" placeholder="Username / email" name="email">
-                <input type="password" placeholder="Password" name="password">
+                <div class="side-icon">
+                    <i class="fas fa-user-circle"></i>
+                    <input type="text" placeholder="Username / email" name="email">
+                </div>
+                <div class="side-icon">
+                    <i class="fas fa-unlock-alt"></i>
+                    <input type="password" placeholder="Password" name="password">
+                </div>
                 <button class="submit">Sign In</button>
             </form>
-            <a href="#">Forget Password?</a>
+            <a class="admin-reset" href="/reset">Forget Password?</a>
         </div>
     </div>
 <!-- Admin Login Pop up features ends -->
@@ -37,8 +43,14 @@
             <h2>STAFF LOGIN</h2>
             <div class="alert">Hello</div> <!--  Alerting message -->
             <form action="/login" method="POST">
-                <input type="text" placeholder="Username / email" name="email">
-                <input type="password" placeholder="Password" name="password">
+                <div class="side-icon">
+                    <i class="fas fa-user-circle"></i>
+                    <input type="text" placeholder="Username / email" name="email">
+                </div>
+                <div class="side-icon">
+                    <i class="fas fa-unlock-alt"></i>
+                    <input type="password" placeholder="Password" name="password">
+                </div>
                 <button class="submit">Sign In</button>
             </form>
             <a href="#">Forget Password?</a>

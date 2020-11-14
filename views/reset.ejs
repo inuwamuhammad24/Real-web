@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="/style.css" type="text/css">
+</head>
+<body>
+    <div class="reset-container">
+        <form action="/admin/reset" method="POST">
+            <%- include('includes/errors') %>
+            <fieldset>
+                <legend>Password reset</legend>
+                <label for="email">Email:</label>
+                <input name="email" type="email" placeholder="Please type your registered email">
+                <button>reset</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

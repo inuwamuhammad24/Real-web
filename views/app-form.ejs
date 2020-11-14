@@ -2,32 +2,65 @@
 
 <div class="app-container">
     <div class="app-container-inner">
-        <form action="#">
+        <form action="/submit_application" method="POST">
             
             <div class="page1">
-                <h1>APPLICATION FORM</h1>
+                <h1>APPLICANT'S DATA</h1>
+                <div class="form-p-div">
+                    <p>Please fill all relevant sections of this application form.</p>
+                    <p>Note that all fills that are marked with (*) are required while the rest are optional</p>
+                </div>
+
                 <div class="form-content">
                     <div class="form-content-inner">
                         <div>
-                            <label for="first-name">First Name:</label>
+                            <label for="first-name">First Name(*):</label>
                             <input type="text" id="first-name" name="firstName">
                         </div>
 
                         <div>
-                            <label for="last-name">Last Name:</label>
-                            <input type="text" id="last-name" name="last-Name">
+                            <label for="middle-name">Middle Name(optional):</label>
+                            <input type="text" id="middle-name" name="middleName">
+                        </div>
+
+                        <div>
+                            <label for="last-name">Last Name(*):</label>
+                            <input type="text" id="last-name" name="lastName">
                         </div>
                     </div>
                 </div>
 
                 <div class="form-content">
-                    <label for="nationality">Nationality</label>
-                    <input type="text" id="nationality" name="nationality" placeholder="e.g Nigeria">
+                    <div class="form-content-inner1">
+                        <div>
+                            <label for="state">State of Origin(*):</label>
+                            <input type="text" id="state" name="state" placeholder="e.g Abuja">
+                        </div>
+
+                        <div>
+                            <label for="LGA">Local Government(*):</label>
+                            <input type="text" id="LGA" name="LGA" placeholder="e.g Alkaleri">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-content">
-                    <label for="state">State of Origin:</label>
-                    <input type="text" id="state" name="state">
+                    <div class="form-content-inner">
+                        <div>
+                            <label for="DoB">Date of Birth(*):</label>
+                            <input type="date" id="DoB" name="DoB" placeholder="Select Your Date of Birth">
+                        </div>
+
+                        <div>
+                            <label for="placeDoB">Place of Birth(*):</label>
+                            <input type="text" id="placeDoB" name="placeDoB" placeholder="Select Your place of Birth">
+                        </div>
+
+                        <div>
+                            <label for="passport">Upload A passport(*):</label>
+                            <input type="file" id="passport" name="passport" placeholder="Upload your Passport (max: 200px)">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-btn">
@@ -36,53 +69,129 @@
             </div>
 
             <div class="page2">
-                    <div class="form-content">
-                        <label for="first-name">First Name:</label>
-                        <input type="text" id="first-name" name="firstName">
-                    </div>
+                <h1>APPLICANT'S DATA</h1>
+                <div class="form-p-div">
+                    <p>Please fill all relevant sections of this application form.</p>
+                    <p>Note that all fills that are marked with (*) are required while the rest are optional</p>
+                </div>
 
-                    <div class="form-content">
-                        <label for="last-name">Last Name:</label>
-                        <input type="text" id="last-name" name="last-Name">
-                    </div>
+                <div class="form-content">
+                    <div class="form-content-inner1">
+                        <div>
+                            <label for="nationality">Nationality(*):</label>
+                            <input type="text" id="nationality" name="nationality">
+                        </div>
 
-                    <div class="form-content">
-                        <label for="nationality">First Name:</label>
-                        <input type="text" id="nationality" name="nationality" placeholder="e.g Nigeria">
-                    </div>
-
-                    <div class="form-content">
-                        <label for="last-name">Last Name:</label>
-                        <input type="text" id="last-name" name="last-Name">
-                    </div>
-
-                    <div class="form-btn">
-                        <button class="previous1">PREVIOUS</button>
-                        <button class="next2">NEXT</button>
+                        <div>
+                            <label for="sex">Sex(*):</label>
+                            <select name="sex" id="sex">
+                                <option value="select_your_gender">Select your gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
-                <div class="page3">
-                    <div class="form-content">
-                        <label for="first-name">First Name:</label>
-                        <input type="text" id="first-name" name="firstName">
+                <div class="form-content">
+                        <div class="form-content-inner1">
+                            <div>
+                                <label for="religion">Religion(optional):</label>
+                                <select name="religion" id="religion">
+                                    <option value="select_your_religion">Select your Religion</option>
+                                    <option value="islam">Islam</option>
+                                    <option value="cristianity">Cristianity</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="tribe">Tribe(optional):</label>
+                                <input placeholder="Your Tribe" type="text" id="tribe" name="tribe">
+                            </div>
+                        </div>
                     </div>
 
                     <div class="form-content">
-                        <label for="last-name">Last Name:</label>
-                        <input type="text" id="last-name" name="last-Name">
-                    </div>
+                        <div class="form-content-inner1">
+                            <div>
+                                <label for="classForAdmin">Class Sought for Admission(*):</label>
+                                <input type="text" id="classForAdmin" name="classForAdmin" placeholder="Select a Class">
+                            </div>
 
-                    <div class="form-content">
-                        <label for="nationality">First Name:</label>
-                        <input type="text" id="nationality" name="nationality" placeholder="e.g Nigeria">
-                    </div>
+                            <div>
+                                <label for="lastSchool">Name of Last school Attended(*):</label>
+                                <input type="text" id="lastSchool" name="lastSchool" placeholder="Type 'none' if there's none">
+                            </div>
 
-                    <div class="form-btn">
-                        <button class="previous2">PREVIOUS</button>
-                        <button class="submit1">SUBMIT</button>
                     </div>
                 </div>
+
+                <div class="form-btn">
+                    <button class="previous1">PREVIOUS</button>
+                    <button class="next2">NEXT</button>
+                </div>
+            </div>
+
+            <div class="page3">
+                <h1>PARENT'S DATA</h1>
+                <div class="form-p-div">
+                    <p>Please fill all relevant sections of this application form.</p>
+                    <p>Note that all fills that are marked with (*) are required while the rest are optional</p>
+                </div>
+
+                <div class="form-content">
+                    <div class="form-content-inner">
+                        <div>
+                            <label for="ffirstName">First(*):</label>
+                            <input type="text" id="ffirstName" name="ffirstName">
+                        </div>
+
+                        <div>
+                            <label for="fmiddleName">Middle Name(optional):</label>
+                            <input type="text" id="fmiddleName" name="fmiddleName">
+                        </div>
+
+                        <div>
+                            <label for="flastName">Last Name(*):</label>
+                            <input type="text" id="flastName" name="flastName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-content">
+                        <div class="form-content-inner1">
+                            <div>
+                                <label for="contactAddress">Contact Address(*):</label>
+                                <input type="text" id="contactAddress" name="contactAddress" placeholder="Your Home Address">
+                            </div>
+
+                            <div>
+                                <label for="occupation">Occupation(optional):</label>
+                                <input type="text" id="occupation" name="occupation" placeholder="Your occupation here">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-content">
+                        <div class="form-content-inner1">
+                            <div>
+                                <label for="phone">Phone Number(*):</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Your Phone Number">
+                            </div>
+
+                            <div>
+                                <label for="email">Email Address(optional):</label>
+                                <input type="email" id="email" name="email" placeholder="Email if any">
+                            </div>
+
+                    </div>
+                </div>
+
+                <div class="form-btn">
+                    <button class="previous2">PREVIOUS</button>
+                    <button class="submit1">SUBMIT</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>

@@ -1,4 +1,5 @@
 const validator = require('validator')
+// const { admin } = require('../controllers/templateController')
 const teachersCollection = require('../db').db().collection("teachers")
 const teachersDataCollection = require('../db').db().collection('teachersData')
 const studentCollection = require('../db').db().collection('students')
@@ -199,6 +200,29 @@ User.all = function() {
                 reject('We cannont find any Teacher')
             }
         })
+    })
+}
+
+User.reset = function(email) {
+    return new Promise(async (resolve, reject) => {
+        if (email == '') reject('Email field cannot be empty')
+
+        if (!validator.isEmail(email) || typeof(email) != 'string') {
+            reject()
+            return
+        }
+
+        let adminexits = await adminCollection.findOne({email: email})
+
+        if (adminexits) {
+            adminexits = {
+                email: adminexits.email
+            }
+            resolve(adminexits)
+        } else {
+            reject('Your email did not match any record')
+        }
+        
     })
 }
 

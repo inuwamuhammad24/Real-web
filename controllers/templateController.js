@@ -1,9 +1,8 @@
 const Email = require('../models/Email')
 const Student = require('../models/Student')
-const { teacherCount } = require('../models/User')
 const User = require('../models/User')
-// const sgMail = require('@sendgrid/mail')
-// sgMail.setApiKey(process.env.SENDGRIDAPIKEY)
+const sgMail = require('@sendgrid/mail')
+sgMail.setApiKey(process.env.SENDGRIDAPIKEY)
 
 // rendering the home page
 exports.home = function (req, res) {
@@ -25,15 +24,7 @@ exports.contact = function (req, res) {
 exports.login = function(req, res) {
    // passing the user input to the User model for verification
    let user = new User(req.body)
-   user.login().then(function(teachersInfo) {
-    //    // sending a notification email to a user when successfully login using sendgrid
-    //    sgMail.send({
-    //     to: 'inuwamuhammad24@gmail.com', 
-    //     from: 'inuwamuhammad24@gmail.com', // Change to your verified sender
-    //     subject: 'Login Successful',
-    //     text: 'You have just login to your account, thanks for login in',
-    //     html:  `<h1>Hi, ${teachersInfo.firstName}</h1> <p>Your account has been logged in, Thanks</p>`,
-    //   }).then(() => console.log('Email send')).catch((err) => console.log(err)) 
+   user.login().then(function(teachersInfo) { 
        req.session.user = {
            firstName: teachersInfo.firstName, 
            lastName: teachersInfo.lastName, 
@@ -193,6 +184,30 @@ exports.logout = function(req, res) {
             res.redirect('/')
         })
     }
+}
+
+exports.reset = function(req, res) {
+    const User = require('../models/User')
+    User.reset(req.body.email).then((admin) => {
+
+        sgMail.send({
+            to: `${admin.email}`, 
+            from: 'inuwamuhammad24@gmail.com', 
+            subject: 'Password Reset',
+            text: 'dsk4453kk is your password reset code',
+            html:  `<h1>Hi, Staff name</h1><p><strong>dsk4453kk</strong> is your password reset  code</p>`,
+          }).then(() => console.log('Email send')).catch((err) => console.log(err))
+
+        req.flash('success', `We have sent an email to ${admin.email} Please check your email`)
+        req.session.save(() => res.redirect('/reset'))
+    }).catch((err) => {
+        req.flash('errors', err)
+        req.session.save(() => res.redirect('/reset'))
+    })
+}
+
+exports.Passwordreset = function(req, res) {
+    res.render('reset', {errors: req.flash('errors'), success: req.flash('success')})
 }
 
 exports.apply = function(req, res) {
