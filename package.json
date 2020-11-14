@@ -2,6 +2,9 @@
   "name": "complex-app",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "6.x"
+  },
   "main": "app.js",
   "scripts": {
     "watch": "start nodemon db --ignore frontend-js --ignore public/ && start webpack --watch",
