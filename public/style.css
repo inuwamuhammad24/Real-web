@@ -1086,7 +1086,7 @@ close {
 
 .flash-success {
     text-align: center;
-    background-color: rgb(192, 255, 109);
+    background-color: rgb(221, 255, 177);
     padding: 20px;
     font-size: 13px;
     color: rgb(0, 58, 0);
@@ -1670,13 +1670,12 @@ close {
     width: 100%;
     margin-bottom: 10px;
     border-radius: 3px;
-    background-color: rgb(244, 244, 244);
 }
 
 .side-icon i {
     display: inline-block;
     padding: 10px;
-    color: #314777;
+    color: #666;
 }
 
 
@@ -2279,5 +2278,19 @@ close {
     .admission-content-container ul {
         grid-template-columns: 1fr;
         grid-gap: 1em;
+    }
+
+    .director {
+        margin: 0;
+    }
+
+    .about-text {
+        margin: 0;
+        margin-top: 30px;
+    }
+
+    .app-container-inner {
+        min-width: auto;
+        width: 95%;
     }
 }
