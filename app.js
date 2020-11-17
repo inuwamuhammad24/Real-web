@@ -1,10 +1,12 @@
 const express = require("express");
-const app = express();
-const router = require("./router");
 const mongodb = require("mongodb");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
+const csrf = require('csurf')
+const app = express();
+
+const router = require("./router");
 
 let sessionOptions = session({
   secret: "Bright aaaaccccademy jjjjoss",
@@ -23,7 +25,25 @@ app.use(express.static("images"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.use(csrf())
+
+app.use(function(req, res, next) {
+  res.locals.csrfToken = req.csrfToken()
+  next()
+})
+
 app.use("/", router);
+
+app.use(function(err, req, res, next) {
+  if (err) {
+    if (err.code == 'EBADCSRFTOKEN') {
+      req.flash('errors', 'cross site request forgery detected')
+      req.session.save(() => res.redirect('/'))
+    } else {
+      res.send('Error in csrf')
+    }
+  }
+})
 app.set("views", "views");
 app.set("view engine", "ejs");
 
