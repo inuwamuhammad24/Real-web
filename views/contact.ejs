@@ -29,6 +29,7 @@
                     <input type="email" name="email" placeholder="Enter your email...">
                     <input type="tel" name="phone" placeholder="Enter your phone number...">
                     <textarea rows="7" name="message" placeholder="Type your message here..."></textarea>
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                     <button class="submit">SUBMIT EMAIL</button>
                 </form>
         </div>

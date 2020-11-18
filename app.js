@@ -40,7 +40,7 @@ app.use(function(err, req, res, next) {
       req.flash('errors', 'cross site request forgery detected')
       req.session.save(() => res.redirect('/'))
     } else {
-      res.send('Error in csrf')
+      res.redirect('/')
     }
   }
 })

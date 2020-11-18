@@ -14,7 +14,7 @@ body {
 .head-design {
     width: 100%;
     padding: 10px;
-    background-image: linear-gradient(to bottom, #4266b4, #001441);
+    background-color: #444;
     overflow: hidden;
 }
 
@@ -23,14 +23,13 @@ body {
     font-size: .9em;
     color: #fff;
     border-radius: 5px 5px 0 0;
-    font-weight: 500;
 }
 
 .director {
     margin: 10px;
     border-radius: 5px 5px 0 0;
     overflow: hidden;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .director img {
@@ -66,13 +65,6 @@ body {
     display: none;
 }
 
-close {
-    padding: 10px;
-    color: red;
-    border: none;
-    font-size: 1.3em;
-}
-
 .close1 {
     padding: 0 5px;
     color: red;
@@ -80,7 +72,7 @@ close {
     font-size: 2.5em;
 }
 
-.close:hover, .close1:hover {
+.close1:hover {
     background: red;
     color: white;
     cursor: pointer;
@@ -107,10 +99,11 @@ close {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .main-head i {
-    margin-right: 10px;
+    margin-right: 25px;
     font-size: 20px;
 }
 .address a {
@@ -129,11 +122,11 @@ close {
 }
 
 .main-head div h1 {
-    font-size: 30pt;
+    font-size: 2em;
     font-family: arial;
     text-align: center;
-    color: #1F3971;
-    text-shadow: 6px 6px 8px rgba(104, 2, 2, 0.699);
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+    color: #111;
 }
 
 .container {
@@ -171,6 +164,18 @@ close {
 .nav {
     display: flex;
     justify-content: space-between;
+}
+
+.nav-bar .social {
+    display: none;
+}
+
+.nav-bar div i {
+    color: #222;
+}
+
+.nav-bar h2 {
+    display: none;
 }
 
 .nav-bar ul {
@@ -418,7 +423,8 @@ close {
     transform: translateY(-50%);
     font-size: 20pt;
     color: #fff;
-    padding: 10px;
+    padding: 5px 10px;
+    border-radius: 50%;
 }
 
 .previous i {
@@ -428,7 +434,8 @@ close {
     transform: translateY(-50%);
     font-size: 20pt;
     color: #fff;
-    padding: 10px;
+    padding: 5px 10px;
+    border-radius: 50%;
 }
 
 .next i:hover, .previous i:hover {
@@ -634,7 +641,7 @@ close {
 
 /* footer styling begins */
 .footer-container {
-    background-color: #1F3971;
+    background-color: #111;
 }
 
 .footer-text {
@@ -647,7 +654,7 @@ close {
 .footer-box p {
     text-align: left;
     color: rgb(202, 202, 202);
-    font-size: 17px;
+    font-size: 12px;
 }
 
 .footer-box p:hover {
@@ -662,9 +669,10 @@ close {
 }
 
 .footer-box h3 {
-    color: rgb(231, 231, 231);
+    color: #fff;
     font-family: arial;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-size: .9em;
 }
 
 .footer-box a {
@@ -686,6 +694,7 @@ close {
     display: flex;
     font-size: 20pt;
     justify-content: center;
+    margin-top: 10px;
 }
 
 .social a {
@@ -1328,11 +1337,12 @@ close {
 }
 
 .sidebar1 {
-    background-color: #021e61;
+    background-color: #111;
     color: white;
     flex: 1;
     position: relative;
     transition: all .5s;
+    padding-bottom: 30px;
 }
 
 .sidebar1 h2 {
@@ -1365,11 +1375,11 @@ close {
 }
 
 .sidebar1 ul li:hover {
-    background-color: #012c8f;;
+    background-color: #000;
 }
 
 .sidebar1 ul li {
-    width: 90%;
+    width: 100%;
     border-radius: 0 20px 20px 0;
     padding: 10px 35px;
     font-family: calibri;
@@ -1378,7 +1388,7 @@ close {
 }
 
 .sidebar1 ul i {
-    margin-right: 30px;
+    margin-right: 20px;
     color: #cacaca;
 }
 
@@ -1742,61 +1752,93 @@ close {
 /* Media query */
 @media screen and (max-width: 780px) {
     .main-head {
-        display: block;
-        width: 100%;
-        height: 200px;
-        margin: 0 auto;
-        margin-bottom: 10px;
+        display: flex;
+        width: 90%;
+        margin: 10px;
+    }
+
+    .main-head div h1 {
+        font-size: 1em;
+    }
+
+    .logo img {
+        height: 75px;
+    }
+
+    .mobile-icons {
+        display: none;
     }
 
     .address {
-        position: relative;
+        position: sticky;
         overflow: hidden;
         transition: .3s ease-out;
+        top: 0;
+        z-index: 1;
+        border-bottom: black;
     }
 
     .address-inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-top: 10px;
         background-color: white;
         width: 100%;
-        padding: 10px;
+        padding: 15px;
         border-bottom: 1px solid #ccc;
     }
     .address form {
         visibility: visible;
-        position: absolute;
-        display: flex;
-        padding: 10px;
+        display: block;
+        padding: 10px 0 10px 10px;
         bottom: -50px;
         width: 100%;
     }
     
-    .mobile-search {
-        visibility: visible;
+    .address form input {
+        width: 100%;
+        padding: 10px;
+        border: none;
     }
 
-    .address form input {
-        padding: 10px;
-        width: 100%;
-        border: none;
-        background: none;
-        border-bottom: 1px solid #999;
+
+    .mobile-search {
+        visibility: visible;
     }
 
     .inner-search {
         border: none;
         outline: none;
         background: none;
+        display: block;
+        color: #fff;
     }
 
-    .inner-search i {
-        font-size: 15px;
-        color: blue;
-        margin-left: -20px;
+    .header-button {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        padding: 15px;
+        background: #444;
+        cursor: pointer;
     }
+
+    .header-button:hover {
+        background-color: #000;
+    }
+
+    /* .inner-search i {
+        font-size: 15px;
+        color: rgb(1, 47, 175);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+        
+    } */
 
     .inner-search:hover {
         cursor: pointer;
@@ -1814,14 +1856,22 @@ close {
 
     .menu {
         display: block;
-        font-size: large;
+        font-size: 1.5em;
         position: relative;
+        color: #444;
+    }
+
+    .header-input {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid #ccc;
+        border-radius: 5px;
     }
 
     .header-container {
         display: block;
-        width: 75%;
-        background-color: #1F3971;
+        width: 100%;
+        background-color: #fff;
         z-index: 200;
         position: fixed;
         top: 0;
@@ -1832,8 +1882,17 @@ close {
         overflow: hidden;
     }
 
+    .nav-bar h2 {
+        display: block;
+        padding: 20px;
+        font-size: 1em;
+        text-align: center;
+        color: #222;
+    }
+
     .nav-bar ul {
         display: block;
+        margin-left: 20px;
     }
 
     .nav ul a {
@@ -1841,8 +1900,8 @@ close {
         display: block;
         margin: 10px;
         padding: 10px;
-        color: #fff;
         border-radius: 3px;
+        border-bottom: 1px solid #ccc;
     }
 
     .nav-bar ul i {
@@ -1852,9 +1911,9 @@ close {
     
     .nav ul a:hover {
         transform: scale(1);
-        color: #000;
-        background-color: #fff;
-        border-bottom: none;
+        color: #fff;
+        background-color: #444;
+        border-bottom: 1px solid #ccc;
     }
 
     .nav {
@@ -1951,11 +2010,11 @@ close {
         background-color: white;
         position: absolute;
         right: 10px;
-        top: 10px;
+        top: 0px;
         z-index: 200;
         padding: 0 7px;
-        font-size: x-large;
-        font-weight: bold;
+        font-size: 2.5em;
+        font-weight: 100;
         border-radius: 2px;
         display: block;
     }
@@ -1995,6 +2054,8 @@ close {
         display: grid;
         padding: 20px;
         grid-gap: 3em;
+        grid-template-columns: 1fr 1fr;
+        border-bottom: 1px solid #222;
     }
 
     .footer-text {
@@ -2169,7 +2230,6 @@ close {
     }
 
     .sidebar1 {
-        background-color: #021e61;
         color: white;
         position: absolute;
         top: 60px;
@@ -2280,17 +2340,21 @@ close {
         grid-gap: 1em;
     }
 
-    .director {
-        margin: 0;
-    }
-
     .about-text {
         margin: 0;
-        margin-top: 30px;
+        margin-bottom: 35px;
     }
 
     .app-container-inner {
         min-width: auto;
         width: 95%;
+    }
+
+    .nav-bar .social {
+        display: flex;
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
