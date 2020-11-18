@@ -303,7 +303,7 @@ body {
     display: block;
     text-align: center;
     font-size: 100px;
-    color: #000;
+    color: #222;
 }
 
 .popup-inner p {
@@ -323,7 +323,7 @@ body {
 .popup-inner h2 {
     text-align: center;
     padding: 20px;
-    color: #1F3971;
+    color: #333;
 }
 
 .popup-inner input {
@@ -1388,7 +1388,7 @@ body {
 
 .sidebar1 ul i {
     margin-right: 20px;
-    color: #cacaca;
+    color: #fff;
 }
 
 .sidebar2 {
@@ -1885,14 +1885,13 @@ body {
     .nav-bar h2 {
         display: block;
         padding: 20px;
-        font-size: 1em;
+        font-size: 1.3em;
         text-align: center;
         color: #222;
     }
 
     .nav-bar ul {
         display: block;
-        margin-left: 20px;
     }
 
     .nav ul a {
@@ -1960,7 +1959,7 @@ body {
 
     .sidebar {
         border: none;
-        padding: 20px;
+        padding: 10px;
         margin-right: 0;
     }
 
@@ -2014,7 +2013,6 @@ body {
         z-index: 200;
         padding: 0 7px;
         font-size: 2.5em;
-        font-weight: 100;
         border-radius: 2px;
         display: block;
     }
@@ -2329,6 +2327,7 @@ body {
 
     .sidebar1 ul li {
         padding: 10px 15px;
+        padding-left: 30px;
     }
 
     .flash-success p, .flash p {
@@ -2353,7 +2352,7 @@ body {
     .nav-bar .social {
         display: flex;
         position: absolute;
-        bottom: 40px;
+        bottom: 70px;
         left: 50%;
         transform: translateX(-50%);
     }
