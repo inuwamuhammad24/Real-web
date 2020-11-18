@@ -363,14 +363,13 @@ body {
 
 .slide {
     position: relative;
-    background-image: url(images/img-3.jpg);
+    background-image: url(images/img-4.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 70vh;
     flex: 3;
     margin-right: 20px;
-    transition: all 2s;
 }
 
 .slide:hover .slide-text {
@@ -1754,11 +1753,12 @@ body {
     .main-head {
         display: flex;
         width: 90%;
-        margin: 10px;
+        margin: 0 auto;
     }
 
     .main-head div h1 {
         font-size: 1em;
+        width: 80%;
     }
 
     .logo img {
