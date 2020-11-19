@@ -4,6 +4,7 @@
     <div class="app-container-inner">
         <form action="/submit_application" method="POST">
             
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="page1">
                 <h1>APPLICANT'S DATA</h1>
                 <div class="form-p-div">

@@ -135,6 +135,7 @@
                 <form action="#">
                     <div class="header-input">
                         <input type="text" placeholder="Looking for help..." autocomplete="off">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <span class="header-button"><button class="inner-search"><i class="fas fa-search"></i></button></span>
                     </div>
                 </form>
@@ -170,6 +171,7 @@
                 <div class="search-bar">    <!-- for the search bar -->
                     <form action="#">
                         <input type="text" placeholder="Looking for help..." autocomplete="off">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                         <button><i class="fas fa-search"></i></button>
                     </form>
                 </div>  
