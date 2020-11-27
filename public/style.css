@@ -1777,6 +1777,7 @@ body {
     background-color: #fff;
     width: 100%;
     position: fixed;
+    display: none;
 }
 
 .search-overlay a {
