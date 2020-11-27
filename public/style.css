@@ -14,7 +14,7 @@ body {
 .head-design {
     width: 100%;
     padding: 10px;
-    background-color: #444;
+    background-image: linear-gradient(to bottom, #49A501, #416119);
     overflow: hidden;
 }
 
@@ -43,7 +43,7 @@ body {
     line-height: 1.5em;
     color: #333;
     font-size: 1em;
-    padding: 20px 0 0 0;
+    padding: 10px 0 0 0;
     font-family: calibri;
 }
 
@@ -371,6 +371,19 @@ body {
     flex: 3;
     margin-right: 20px;
 }
+
+/* testing images slider style */
+/* .img-container {
+    display: flex;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+} */
+
+/* testing images slider ends here */
+
 
 .slide:hover .slide-text {
     opacity: 1;
@@ -1743,6 +1756,40 @@ body {
 }
 
 
+/* search effect */
+
+.loader {
+    height: 50px;
+    width: 50px;
+    border: solid rgb(244, 244, 244) 5px;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: #444 solid 5px;
+    animation-name: spin 2s linear infinite;
+    -webkit-animation: spin 2s linear infinite;;
+}
+
+.search-overlay {
+    height:30vh;
+    background-color: #fff;
+    width: 100%;
+    position: fixed;
+}
+
+.search-overlay a {
+    padding: 0;
+
+}
+
+@keyframes spin {
+    from {transform: rotate(0deg); -webkit-transform: rotate(0deg);}
+    to {transform: rotate(360deg); -webkit-transform: rotate(360deg);}
+}
+
+
 
 
 
@@ -1820,12 +1867,12 @@ body {
         right: 0;
         transform: translateY(-50%);
         padding: 15px;
-        background: #444;
+        background: linear-gradient(to bottom, #49A501, #416119);
         cursor: pointer;
     }
 
     .header-button:hover {
-        background-color: #000;
+        background: #000;
     }
 
     /* .inner-search i {
